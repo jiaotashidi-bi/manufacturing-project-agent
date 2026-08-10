@@ -1,0 +1,38 @@
+[
+  {
+    "source_id": "sf_requirements_2026",
+    "title": "智能工厂梯度培育要素条件（2026年版）",
+    "path": "data/raw/smart_factory_requirements_2026.pdf",
+    "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/670be81cbc174002bee25f338c253559.pdf",
+    "kind": "pdf",
+    "official": true,
+    "sha256": "eb2c2e36324a003c96dd1b4f98519e33ceb8e2af1c823f4a8306d06e72aa72a3"
+  },
+  {
+    "source_id": "sf_materials_2026",
+    "title": "卓越级智能工厂项目申报材料清单",
+    "path": "data/raw/excellent_smart_factory_materials_2026.docx",
+    "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/5de2ac885e3a4a778734e79a21c6880f.docx",
+    "kind": "docx",
+    "official": true,
+    "sha256": "543afc61ad16ecc989cd836f1f84e92d4de8757e314b987496456ffbbff981c9"
+  },
+  {
+    "source_id": "sme_method_2026",
+    "title": "优质中小企业梯度培育管理办法",
+    "path": "data/raw/quality_sme_cultivation_2026.pdf",
+    "url": "https://wap.miit.gov.cn/cms_files/filemanager/1226211233/attach/20261/0c74a1a375e741f2ae3a5672c298a19c.pdf",
+    "kind": "pdf",
+    "official": true,
+    "sha256": "f136e7dd818b934e2f569da32f98fbd86c3bb2d1dbba376bd7269a2aa3e98d68"
+  },
+  {
+    "source_id": "lg_form_2026",
+    "title": "第八批专精特新“小巨人”企业申请书",
+    "path": "data/raw/little_giant_application_2026.pdf",
+    "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20263/a0fe63f9bd704e67a51193ca049f5771.pdf",
+    "kind": "pdf",
+    "official": true,
+    "sha256": "6ceb09e6167692189165f8d053b4d116e141dba7723abd41d383b9d97fab6288"
+  }
+]

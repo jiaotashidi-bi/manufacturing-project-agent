@@ -1,0 +1,49 @@
+{
+  "id": "lingyun_incomplete",
+  "name": "凌云智能装备（宁波）有限公司（虚构，信息不完整）",
+  "fictional": true,
+  "profile_version": "2026.08-demo-v1",
+  "facts": {
+    "legal": {
+      "registered_in_china": true,
+      "independent_legal_person": true
+    },
+    "business": {
+      "enterprise_size": "medium",
+      "regulated_industrial_enterprise": true,
+      "specific_market_years": 6,
+      "main_product": "精密数控磨削装备"
+    },
+    "financials": {
+      "2025": {
+        "revenue": 12500,
+        "main_business_revenue": 11600,
+        "main_business_ratio": 92.8
+      }
+    },
+    "certifications": {
+      "provincial_specialized_sme": true,
+      "national_single_champion": false
+    },
+    "group": {
+      "no_related_giant_conflict": true
+    },
+    "compliance": {
+      "clean_three_year_record": true
+    },
+    "factory": {
+      "completed": true,
+      "current_level": "advanced",
+      "ai_exploration": true,
+      "cmm_level": 3,
+      "covered_links": [true, true, true, true, true],
+      "cooperate_with_inspection": true
+    }
+  },
+  "available_materials": [
+    "sf_company_information",
+    "sf_factory_information",
+    "lg_application_form"
+  ],
+  "document_claims": {}
+}

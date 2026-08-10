@@ -1,0 +1,300 @@
+{
+  "id": "smart_factory_excellent_2026",
+  "title": "2026年度卓越级智能工厂梯度培育",
+  "issuer": "工业和信息化部等六部门",
+  "document_number": "工信厅联通装函〔2026〕343号",
+  "jurisdiction": "中国大陆",
+  "published_at": "2026-07-17",
+  "application_start": "2026-07-17",
+  "application_deadline": "2026-08-15",
+  "amount_cny": null,
+  "amount_note": "国家通知未明确统一补助金额，本项目属于梯度培育和认定类项目；地方配套支持需另查属地文件。",
+  "application_url": "https://www.miit-imps.com",
+  "program_level": "国家级",
+  "summary": "面向已建成并获评先进级智能工厂、智能制造水平国内领先的申报主体，培育全国领先的卓越级智能工厂。",
+  "tags": ["制造业", "智能工厂", "数字化转型", "人工智能", "国家级"],
+  "sources": [
+    {
+      "source_id": "sf_notice_2026",
+      "title": "关于开展2026年度智能工厂梯度培育行动的通知",
+      "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+      "locator": "正文第二部分",
+      "quote": "卓越级智能工厂重点实施智能化升级，打造全国领先的发展标杆。"
+    },
+    {
+      "source_id": "sf_requirements_2026",
+      "title": "智能工厂梯度培育要素条件（2026年版）",
+      "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/670be81cbc174002bee25f338c253559.pdf",
+      "locator": "第1页，基本要求",
+      "quote": "卓越级智能工厂智能制造能力成熟度应达到三级及以上。"
+    },
+    {
+      "source_id": "sf_materials_2026",
+      "title": "卓越级智能工厂项目申报材料清单",
+      "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/5de2ac885e3a4a778734e79a21c6880f.docx",
+      "locator": "附件2",
+      "quote": "清单包括承诺、单位信息、工厂信息、建设情况、建设成效和提升计划。"
+    }
+  ],
+  "rules": [
+    {
+      "id": "sf_registered_in_china",
+      "label": "在中国境内注册",
+      "fact": "legal.registered_in_china",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_notice_2026",
+        "title": "关于开展2026年度智能工厂梯度培育行动的通知",
+        "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+        "locator": "第二部分（一）第1项",
+        "quote": "申报主体在中华人民共和国境内注册。"
+      }]
+    },
+    {
+      "id": "sf_independent_legal_person",
+      "label": "具有独立法人资格",
+      "fact": "legal.independent_legal_person",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_notice_2026",
+        "title": "关于开展2026年度智能工厂梯度培育行动的通知",
+        "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+        "locator": "第二部分（一）第1项",
+        "quote": "申报主体应具有独立法人资格，特定行业允许分支机构申报。"
+      }]
+    },
+    {
+      "id": "sf_regulated_enterprise",
+      "label": "属于规模以上工业企业",
+      "fact": "business.regulated_industrial_enterprise",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_requirements_2026",
+        "title": "智能工厂梯度培育要素条件（2026年版）",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/670be81cbc174002bee25f338c253559.pdf",
+        "locator": "第1页，基本要求第1项",
+        "quote": "企业应为规模以上工业企业。"
+      }]
+    },
+    {
+      "id": "sf_good_financial_status",
+      "label": "近三年经营和财务状况良好",
+      "fact": "compliance.good_financial_status",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_requirements_2026",
+        "title": "智能工厂梯度培育要素条件（2026年版）",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/670be81cbc174002bee25f338c253559.pdf",
+        "locator": "第1页，基本要求第2项",
+        "quote": "企业近三年经营和财务状况良好。"
+      }]
+    },
+    {
+      "id": "sf_good_compliance",
+      "label": "无不良信用、重大事故或违法违规",
+      "fact": "compliance.clean_three_year_record",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_requirements_2026",
+        "title": "智能工厂梯度培育要素条件（2026年版）",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/670be81cbc174002bee25f338c253559.pdf",
+        "locator": "第1页，基本要求第2项",
+        "quote": "无不良信用记录，无较大及以上安全、环保等事故。"
+      }]
+    },
+    {
+      "id": "sf_factory_completed",
+      "label": "智能工厂已经建成",
+      "fact": "factory.completed",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_notice_2026",
+        "title": "关于开展2026年度智能工厂梯度培育行动的通知",
+        "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+        "locator": "第二部分（一）第2项",
+        "quote": "申报主体已完成智能工厂建设。"
+      }]
+    },
+    {
+      "id": "sf_advanced_level",
+      "label": "已经获评先进级智能工厂",
+      "fact": "factory.current_level",
+      "operator": "eq",
+      "expected": "advanced",
+      "citations": [{
+        "source_id": "sf_notice_2026",
+        "title": "关于开展2026年度智能工厂梯度培育行动的通知",
+        "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+        "locator": "第二部分（一）第2项",
+        "quote": "申报主体应获评先进级智能工厂。"
+      }]
+    },
+    {
+      "id": "sf_domestic_leading",
+      "label": "智能制造达到国内领先水平",
+      "fact": "factory.domestic_leading",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_notice_2026",
+        "title": "关于开展2026年度智能工厂梯度培育行动的通知",
+        "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+        "locator": "第二部分（一）第2项",
+        "quote": "智能制造达到国内领先水平。"
+      }]
+    },
+    {
+      "id": "sf_ai_exploration",
+      "label": "已探索人工智能等新技术应用",
+      "fact": "factory.ai_exploration",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_notice_2026",
+        "title": "关于开展2026年度智能工厂梯度培育行动的通知",
+        "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+        "locator": "第二部分（一）第2项",
+        "quote": "开展了人工智能等新技术应用探索。"
+      }]
+    },
+    {
+      "id": "sf_cmm_level",
+      "label": "智能制造能力成熟度达到三级",
+      "fact": "factory.cmm_level",
+      "operator": "gte",
+      "expected": 3,
+      "unit": "级",
+      "citations": [{
+        "source_id": "sf_requirements_2026",
+        "title": "智能工厂梯度培育要素条件（2026年版）",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/670be81cbc174002bee25f338c253559.pdf",
+        "locator": "第1页，基本要求第5项",
+        "quote": "卓越级智能工厂应达到三级及以上。"
+      }]
+    },
+    {
+      "id": "sf_five_links",
+      "label": "原则上覆盖五个建设环节",
+      "fact": "factory.covered_links",
+      "operator": "all_true",
+      "expected": 5,
+      "citations": [{
+        "source_id": "sf_requirements_2026",
+        "title": "智能工厂梯度培育要素条件（2026年版）",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/670be81cbc174002bee25f338c253559.pdf",
+        "locator": "第5页，卓越级建设内容",
+        "quote": "原则上应覆盖全部五个环节。"
+      }]
+    },
+    {
+      "id": "sf_ai_scene_ratio",
+      "label": "人工智能技术场景比例不低于30%",
+      "fact": "factory.ai_scene_ratio",
+      "operator": "gte",
+      "expected": 30,
+      "unit": "%",
+      "citations": [{
+        "source_id": "sf_requirements_2026",
+        "title": "智能工厂梯度培育要素条件（2026年版）",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/670be81cbc174002bee25f338c253559.pdf",
+        "locator": "第6页，卓越级建设成效第1项",
+        "quote": "应用人工智能技术场景比例不低于30%。"
+      }]
+    },
+    {
+      "id": "sf_cooperate",
+      "label": "同意配合核查、推广和案例交流",
+      "fact": "factory.cooperate_with_inspection",
+      "operator": "eq",
+      "expected": true,
+      "citations": [{
+        "source_id": "sf_notice_2026",
+        "title": "关于开展2026年度智能工厂梯度培育行动的通知",
+        "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2026/art_bbccc17a650749c2a76569679350fa5d.html",
+        "locator": "第二部分（一）第3项",
+        "quote": "申报主体须配合现场核查、技术推广和典型案例交流。"
+      }]
+    }
+  ],
+  "materials": [
+    {
+      "id": "sf_truth_confidentiality_commitment",
+      "label": "真实性及保密承诺书",
+      "description": "确认申报内容真实且不涉及国家秘密、商业秘密。",
+      "citations": [{
+        "source_id": "sf_materials_2026",
+        "title": "卓越级智能工厂项目申报材料清单",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/5de2ac885e3a4a778734e79a21c6880f.docx",
+        "locator": "附件2，第1项",
+        "quote": "真实性及保密承诺书。"
+      }]
+    },
+    {
+      "id": "sf_company_information",
+      "label": "申报单位基本信息",
+      "description": "企业名称、地址、性质、行业和联系方式等。",
+      "citations": [{
+        "source_id": "sf_materials_2026",
+        "title": "卓越级智能工厂项目申报材料清单",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/5de2ac885e3a4a778734e79a21c6880f.docx",
+        "locator": "附件2，第2项",
+        "quote": "申报单位基本信息。"
+      }]
+    },
+    {
+      "id": "sf_factory_information",
+      "label": "智能工厂基本信息",
+      "description": "建设时间、总投资、集成商和项目简介等。",
+      "citations": [{
+        "source_id": "sf_materials_2026",
+        "title": "卓越级智能工厂项目申报材料清单",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/5de2ac885e3a4a778734e79a21c6880f.docx",
+        "locator": "附件2，第3项",
+        "quote": "智能工厂基本信息。"
+      }]
+    },
+    {
+      "id": "sf_construction",
+      "label": "智能工厂建设情况",
+      "description": "建设背景、总体架构、重点环节和重点场景。",
+      "citations": [{
+        "source_id": "sf_materials_2026",
+        "title": "卓越级智能工厂项目申报材料清单",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/5de2ac885e3a4a778734e79a21c6880f.docx",
+        "locator": "附件2，第4项",
+        "quote": "智能工厂建设情况。"
+      }]
+    },
+    {
+      "id": "sf_outcomes",
+      "label": "智能工厂建设成效",
+      "description": "先进性、绩效改善、推广、绿色安全和人才培养。",
+      "citations": [{
+        "source_id": "sf_materials_2026",
+        "title": "卓越级智能工厂项目申报材料清单",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/5de2ac885e3a4a778734e79a21c6880f.docx",
+        "locator": "附件2，第5项",
+        "quote": "智能工厂建设成效。"
+      }]
+    },
+    {
+      "id": "sf_improvement_plan",
+      "label": "智能工厂后续提升计划",
+      "description": "后续改造提升目标和实施方案。",
+      "citations": [{
+        "source_id": "sf_materials_2026",
+        "title": "卓越级智能工厂项目申报材料清单",
+        "url": "https://www.miit.gov.cn/cms_files/filemanager/1226211233/attach/20267/5de2ac885e3a4a778734e79a21c6880f.docx",
+        "locator": "附件2，第6项",
+        "quote": "智能工厂后续提升计划。"
+      }]
+    }
+  ]
+}
+

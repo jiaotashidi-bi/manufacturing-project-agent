@@ -1,0 +1,62 @@
+{
+  "assessment_cases": [
+    {
+      "name": "强企业匹配开放中的智能工厂项目",
+      "company_id": "huaxin_precision",
+      "policy_id": "smart_factory_excellent_2026",
+      "as_of": "2026-08-10",
+      "expected_window": "open",
+      "expected_eligibility": "eligible"
+    },
+    {
+      "name": "强企业条件匹配但小巨人窗口已关闭",
+      "company_id": "huaxin_precision",
+      "policy_id": "little_giant_batch_8_2026",
+      "as_of": "2026-08-10",
+      "expected_window": "closed",
+      "expected_eligibility": "eligible"
+    },
+    {
+      "name": "弱企业不符合智能工厂条件",
+      "company_id": "yuanqi_components",
+      "policy_id": "smart_factory_excellent_2026",
+      "as_of": "2026-08-10",
+      "expected_window": "open",
+      "expected_eligibility": "not_eligible"
+    },
+    {
+      "name": "弱企业不符合小巨人条件",
+      "company_id": "yuanqi_components",
+      "policy_id": "little_giant_batch_8_2026",
+      "as_of": "2026-08-10",
+      "expected_window": "closed",
+      "expected_eligibility": "not_eligible"
+    },
+    {
+      "name": "信息不完整时返回待补充而非猜测",
+      "company_id": "lingyun_incomplete",
+      "policy_id": "smart_factory_excellent_2026",
+      "as_of": "2026-08-10",
+      "expected_window": "open",
+      "expected_eligibility": "needs_information"
+    }
+  ],
+  "retrieval_cases": [
+    {
+      "query": "卓越级智能工厂人工智能场景比例要求",
+      "expected_source_id": "sf_requirements_2026",
+      "must_contain": "30%"
+    },
+    {
+      "query": "小巨人营业收入5000万元",
+      "expected_source_id": "lg_form_2026",
+      "must_contain": "5000"
+    },
+    {
+      "query": "卓越级智能工厂申报材料清单",
+      "expected_source_id": "sf_materials_2026",
+      "must_contain": "材料"
+    }
+  ]
+}
+

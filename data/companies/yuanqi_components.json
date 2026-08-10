@@ -1,0 +1,79 @@
+{
+  "id": "yuanqi_components",
+  "name": "远启精密部件（合肥）有限公司（虚构）",
+  "fictional": true,
+  "profile_version": "2026.08-demo-v1",
+  "facts": {
+    "legal": {
+      "registered_in_china": true,
+      "independent_legal_person": true,
+      "registration_date": "2023-09-01"
+    },
+    "business": {
+      "enterprise_size": "small",
+      "regulated_industrial_enterprise": false,
+      "specific_market_years": 2,
+      "main_product": "通用金属连接件"
+    },
+    "financials": {
+      "2023": {"revenue": 3900},
+      "2024": {"revenue": 4500, "rd_expense": 90, "rd_ratio": 2.0},
+      "2025": {
+        "revenue": 4200,
+        "main_business_revenue": 3000,
+        "main_business_ratio": 71.4286,
+        "assets": 5000,
+        "liabilities": 4000,
+        "debt_ratio": 80.0,
+        "rd_expense": 100,
+        "rd_ratio": 2.3810
+      },
+      "revenue_cagr_2023_2025": 3.7742,
+      "rd_expense_sum_2024_2025": 190
+    },
+    "certifications": {
+      "provincial_specialized_sme": false,
+      "specialized_quality_score": 42,
+      "national_single_champion": false
+    },
+    "innovation": {
+      "type_i_ip_count": 1,
+      "ip_applied_with_benefit": false
+    },
+    "market": {
+      "domestic_share": 1.2,
+      "domestic_rank": 27,
+      "share_at_least_10_or_domestic_top3": false
+    },
+    "industrial_chain": {"eligible_field": false},
+    "group": {"no_related_giant_conflict": true},
+    "audit": {"registered_encoded_reports": false},
+    "compliance": {
+      "good_financial_status": true,
+      "clean_three_year_record": true
+    },
+    "factory": {
+      "completed": false,
+      "completion_date": null,
+      "current_level": "basic",
+      "domestic_leading": false,
+      "ai_exploration": true,
+      "cmm_level": 2,
+      "covered_links": [true, false, true, false, false],
+      "ai_scene_ratio": 12.0,
+      "cooperate_with_inspection": true
+    }
+  },
+  "available_materials": [
+    "sf_company_information",
+    "sf_factory_information",
+    "lg_application_form"
+  ],
+  "document_claims": {
+    "2025_revenue_wan": {
+      "company_profile": 4200,
+      "draft_application": 4600
+    }
+  }
+}
+
