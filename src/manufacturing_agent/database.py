@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import json
 from datetime import UTC, datetime
+from pathlib import Path
 from typing import Any
 
 from sqlalchemy import DateTime, Integer, String, Text, create_engine, select
+from sqlalchemy.engine import make_url
 from sqlalchemy.orm import DeclarativeBase, Mapped, Session, mapped_column
 
 from .models import CompanyProfile, Policy, WorkflowRun
@@ -85,7 +87,15 @@ class DatabaseStore:
     """Small repository abstraction supporting both SQLite and PostgreSQL URLs."""
 
     def __init__(self, database_url: str) -> None:
-        connect_args = {"check_same_thread": False} if database_url.startswith("sqlite") else {}
+        url = make_url(database_url)
+        database_path = url.database
+        if (
+            url.get_backend_name() == "sqlite"
+            and database_path is not None
+            and database_path not in {"", ":memory:"}
+        ):
+            Path(database_path).expanduser().parent.mkdir(parents=True, exist_ok=True)
+        connect_args = {"check_same_thread": False} if url.get_backend_name() == "sqlite" else {}
         self.engine = create_engine(database_url, connect_args=connect_args, pool_pre_ping=True)
         Base.metadata.create_all(self.engine)
 

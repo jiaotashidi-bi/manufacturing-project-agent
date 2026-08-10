@@ -19,6 +19,14 @@ from manufacturing_agent.upload_security import detect_sensitive_text, inspect_u
 from manufacturing_agent.workflow import ManufacturingApplicationAgent
 
 
+def test_database_creates_missing_sqlite_parent(tmp_path):
+    database_path = tmp_path / "fresh" / "nested" / "agent.db"
+    database = DatabaseStore(f"sqlite:///{database_path.as_posix()}")
+
+    assert database_path.is_file()
+    database.engine.dispose()
+
+
 def test_audit_hash_chain_detects_tampering(tmp_path):
     settings = AppSettings(database_url=f"sqlite:///{(tmp_path / 'db.sqlite').as_posix()}")
     agent = ManufacturingApplicationAgent(settings=settings, database=DatabaseStore(settings.database_url))
