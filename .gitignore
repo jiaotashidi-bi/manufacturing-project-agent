@@ -1,6 +1,10 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
 .venv/
 .env
 dist/
@@ -9,4 +13,5 @@ build/
 data/runtime/
 data/index/
 exports/
+docs/qa/
 .streamlit/secrets.toml

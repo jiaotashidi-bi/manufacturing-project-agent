@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+databases:
+  - name: manufacturing-agent-db
+    plan: free
+    databaseName: manufacturing_agent
+    user: manufacturing_agent
+
+services:
+  - type: web
+    name: manufacturing-agent-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: MPA_DATABASE_URL
+        fromDatabase:
+          name: manufacturing-agent-db
+          property: connectionString
+      - key: MPA_PUBLIC_DEMO_ONLY
+        value: "true"
+      - key: MPA_AUTH_MODE
+        value: demo
+
+  - type: web
+    name: manufacturing-agent-ui
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerCommand: streamlit run app.py --server.address=0.0.0.0 --server.port=$PORT
+    healthCheckPath: /_stcore/health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: MPA_SERVICE_KIND
+        value: ui
+      - key: MPA_DATABASE_URL
+        fromDatabase:
+          name: manufacturing-agent-db
+          property: connectionString
+      - key: MPA_PUBLIC_DEMO_ONLY
+        value: "true"
+      - key: MPA_AUTH_MODE
+        value: demo

@@ -1,0 +1,22 @@
+[
+  {"query":"小巨人从事细分市场年限","expected_source_id":"sme_method_2026","must_contain":"3年"},
+  {"query":"小巨人上年度营业收入门槛","expected_source_id":"lg_form_2026","must_contain":"5000万元"},
+  {"query":"主营业务收入占营业收入比例","expected_source_id":"lg_form_2026","must_contain":"90%"},
+  {"query":"近两年营业收入复合增长率","expected_source_id":"lg_form_2026","must_contain":"5%"},
+  {"query":"小巨人资产负债率上限","expected_source_id":"lg_form_2026","must_contain":"75%"},
+  {"query":"近两年研发费用合计要求","expected_source_id":"lg_form_2026","must_contain":"1200万元"},
+  {"query":"研发费用占营业收入比例","expected_source_id":"lg_form_2026","must_contain":"3%"},
+  {"query":"I类知识产权数量要求","expected_source_id":"lg_form_2026","must_contain":"4项"},
+  {"query":"细分市场占有率或国内排名","expected_source_id":"sme_method_2026","must_contain":"10%"},
+  {"query":"专精特新发展评价得分门槛","expected_source_id":"sme_method_2026","must_contain":"60分"},
+  {"query":"制造业单项冠军还能否申报小巨人","expected_source_id":"lg_notice_2026","must_contain":"不再推荐"},
+  {"query":"审计报告监管平台赋码要求","expected_source_id":"lg_notice_2026","must_contain":"赋码"},
+  {"query":"市场占有率情况说明数据出处","expected_source_id":"lg_form_2026","must_contain":"有出处"},
+  {"query":"智能工厂申报主体注册地","expected_source_id":"sf_notice_2026","must_contain":"境内注册"},
+  {"query":"卓越级智能工厂规模以上企业要求","expected_source_id":"sf_requirements_2026","must_contain":"规模以上"},
+  {"query":"智能制造能力成熟度等级","expected_source_id":"sf_requirements_2026","must_contain":"三级"},
+  {"query":"卓越级智能工厂建设环节数量","expected_source_id":"sf_requirements_2026","must_contain":"五个环节"},
+  {"query":"人工智能技术应用场景比例","expected_source_id":"sf_requirements_2026","must_contain":"30%"},
+  {"query":"智能工厂真实性保密承诺材料","expected_source_id":"sf_materials_2026","must_contain":"承诺书"},
+  {"query":"智能工厂后续提升计划材料","expected_source_id":"sf_materials_2026","must_contain":"提升计划"}
+]

@@ -151,6 +151,8 @@ class AuditEvent(BaseModel):
     event_type: str
     actor: str
     details: dict[str, Any] = Field(default_factory=dict)
+    previous_hash: str = "GENESIS"
+    event_hash: str = ""
 
 
 class WorkflowRun(BaseModel):
@@ -178,3 +180,30 @@ class ApprovalRequest(BaseModel):
     reviewer: str
     decision: Literal["approved", "rejected"]
     comment: str = ""
+
+
+class ExtractedPolicyField(BaseModel):
+    field: str
+    value: Any
+    confidence: float = Field(ge=0, le=1)
+    citation: Citation | None = None
+    needs_review: bool = True
+
+
+class PolicyExtractionDraft(BaseModel):
+    policy: Policy
+    extracted_fields: list[ExtractedPolicyField] = Field(default_factory=list)
+    warnings: list[str] = Field(default_factory=list)
+    provider: str = "offline"
+    source_sha256: str
+
+
+class PolicyReviewRequest(BaseModel):
+    reviewer: str
+    decision: Literal["approved", "rejected"]
+    comment: str = ""
+
+
+class CompanyUpsertRequest(BaseModel):
+    company: CompanyProfile
+    actor: str = "analyst"

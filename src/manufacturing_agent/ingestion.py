@@ -3,9 +3,9 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Iterator
 
 from docx import Document
 from pypdf import PdfReader
@@ -75,7 +75,7 @@ class SourceIngestor:
                 )
 
     def _docx_chunks(self, source: dict, path: Path) -> Iterator[SourceChunk]:
-        document = Document(path)
+        document = Document(str(path))
         block_number = 0
         for paragraph in document.paragraphs:
             for text in split_text(paragraph.text):

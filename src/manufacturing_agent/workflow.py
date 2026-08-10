@@ -5,7 +5,9 @@ from pathlib import Path
 from uuid import uuid4
 
 from .audit import AuditStore
+from .config import AppSettings, get_settings
 from .consistency import find_consistency_issues
+from .database import DatabaseStore
 from .drafting import ApplicationDraftBuilder
 from .eligibility import (
     check_materials,
@@ -22,8 +24,7 @@ from .models import (
     WorkflowRun,
 )
 from .repository import Repository
-from .retrieval import CitationRetriever
-
+from .retrieval import HybridCitationRetriever
 
 STATUS_ZH = {
     EligibilityStatus.ELIGIBLE: "条件匹配",
@@ -33,16 +34,42 @@ STATUS_ZH = {
 
 
 class ManufacturingApplicationAgent:
-    def __init__(self, repository: Repository | None = None) -> None:
+    def __init__(
+        self,
+        repository: Repository | None = None,
+        settings: AppSettings | None = None,
+        database: DatabaseStore | None = None,
+    ) -> None:
         self.repository = repository or Repository()
-        self.store = AuditStore(self.repository.root / "data" / "runtime")
+        self.settings = settings or get_settings()
+        self.database = database or DatabaseStore(self.settings.database_url)
+        self.store = AuditStore(
+            self.repository.root / "data" / "runtime", database=self.database
+        )
 
     def list_policies(self) -> list[Policy]:
-        return self.repository.list_policies()
+        policies = {policy.id: policy for policy in self.repository.list_policies()}
+        policies.update({policy.id: policy for policy in self.database.list_approved_policies()})
+        return list(policies.values())
+
+    def list_companies(self):
+        companies = {company.id: company for company in self.repository.list_companies()}
+        companies.update({company.id: company for company in self.database.list_companies()})
+        return list(companies.values())
+
+    def get_company(self, company_id: str):
+        for company in self.list_companies():
+            if company.id == company_id:
+                return company
+        raise KeyError(f"Unknown company: {company_id}")
 
     def retrieve(self, query: str, top_k: int = 5):
-        return CitationRetriever(
-            self.list_policies(), extra_chunks=self.repository.source_chunks()
+        return HybridCitationRetriever(
+            self.list_policies(),
+            extra_chunks=self.repository.source_chunks(),
+            bm25_weight=self.settings.hybrid_bm25_weight,
+            semantic_weight=self.settings.hybrid_semantic_weight,
+            exact_weight=self.settings.hybrid_exact_weight,
         ).search(query, top_k=top_k)
 
     def assess(
@@ -53,7 +80,7 @@ class ManufacturingApplicationAgent:
         actor: str = "analyst",
     ) -> WorkflowRun:
         effective_date = as_of or date.today()
-        company = self.repository.get_company(company_id)
+        company = self.get_company(company_id)
         if not company.fictional:
             raise ValueError("公开演示模式仅允许使用 fictional=true 的企业档案")
         policies = self.list_policies()
@@ -180,6 +207,30 @@ class ManufacturingApplicationAgent:
             sections.extend(["", "---", "", f"<!-- policy_id: {policy_id} -->", "", draft])
         path.write_text("\n".join(sections), encoding="utf-8")
         self.store.append_event(run, "report_exported", role, path=str(path))
+        self.store.save(run)
+        return path
+
+    def export_document(self, run_id: str, role: str, format_name: str) -> Path:
+        from .exporters import export_docx, export_pdf
+
+        if role not in {"approver", "admin"}:
+            raise PermissionError("Only approver or admin may export")
+        run = self.store.load(run_id)
+        if run.approval_status != "approved":
+            raise PermissionError("Export blocked: approval is required")
+        export_dir = self.repository.root / "exports"
+        export_dir.mkdir(parents=True, exist_ok=True)
+        normalized = format_name.lower()
+        path = export_dir / f"{run.run_id}_assessment.{normalized}"
+        if normalized == "docx":
+            export_docx(run, path)
+        elif normalized == "pdf":
+            export_pdf(run, path)
+        elif normalized == "md":
+            return self.export(run_id, role)
+        else:
+            raise ValueError("format must be md, docx or pdf")
+        self.store.append_event(run, "report_exported", role, path=str(path), format=normalized)
         self.store.save(run)
         return path
 

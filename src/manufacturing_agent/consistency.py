@@ -30,6 +30,7 @@ def _ratio_check(
     declared = _number(get_fact(company.facts, declared_path))
     if numerator is None or denominator in (None, 0) or declared is None:
         return None
+    assert denominator is not None
     calculated = numerator / denominator * 100
     if isclose(calculated, declared, abs_tol=tolerance):
         return None
@@ -102,4 +103,3 @@ def find_consistency_issues(company: CompanyProfile) -> list[ConsistencyFinding]
             )
         )
     return findings
-
